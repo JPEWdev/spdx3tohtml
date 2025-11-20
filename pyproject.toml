@@ -1,0 +1,51 @@
+[project]
+name = "spdx3tohtml"
+description = "Convert a SPDX 3 document into a HTML page with links to documentation"
+dynamic = ["version"]
+dependencies = []
+requires-python = ">= 3.8"
+authors = [
+    {name = "Joshua Watt", email = "JPEWhacker@gmail.com"},
+]
+readme = "README.md"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+license = "MIT"
+
+[project.optional-dependencies]
+dev = [
+    "flake8 >= 7.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/JPEWdev/spdx3tohtml"
+Repository = "https://github.com/JPEWdev/spdx3tohtml.git"
+Issues = "https://github.com/JPEWdev/spdx3tohtml/issues"
+
+[project.scripts]
+spdx3tohtml = "spdx3tohtml:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/spdx3tohtml/version.py"
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+    "--cov=spdx3tohtml",
+]
+
+[tool.coverage.run]
+relative_files = true
